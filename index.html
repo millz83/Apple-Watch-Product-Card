@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Watch Product card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <div class="container">
+        <div class="card">
+            <div class="headerCol"></div>
+            <div class="imgBox">
+                <img src="4.png">
+            </div>
+
+            <div class="contentBox">
+                <h2>Smart Watch</h2>
+                <div class="colors">
+                    <h3>Color :</h3>
+                    <button class="blue" data-info="#03a9f4, 1.png"></button>
+                    <button class="black" data-info="#000, 2.png"></button>
+                    <button class="green" data-info="#9bdc28, 3.png"></button>
+                    <button class="rose" data-info="#e91e63, 4.png"></button>
+                </div>
+
+                <button class="buy">Buy Now</button>
+            </div>
+        </div>
+    </div>
+<script>
+    const btns = document.querySelectorAll('.colors > button');
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', ()=> {
+          const bg = document.querySelector('.headerCol');
+          const img = document.querySelector('.imgBox > img');
+
+
+          const btnInfo = btn.getAttribute('data-info').split(',');
+            
+          bg.style.background = btnInfo[0];
+          img.src = btnInfo[1];
+        });
+    })
+</script>
+</body>
+</html>
