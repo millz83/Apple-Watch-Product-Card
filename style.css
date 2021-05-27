@@ -1,0 +1,201 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #131313;
+
+}
+
+.container  .card{
+    position: relative;
+    width: 320px;
+    height:450px;
+    background: #232323;
+    border-radius:20px;
+    overflow:hidden;
+
+
+}
+
+.container .card:before {
+    content: "Smart Watch";
+    position: absolute;
+    top:40%;
+    left:5%;
+    font-size: 6em;
+    transform:rotate(-30deg);
+    font-style: italic;
+    text-align: center;
+    color: rgba(255,255,255,.05);
+    transition:.5s;
+
+}
+
+
+.container .card:hover:before {
+    transform:rotate(0deg);
+    font-size: 7em;
+}
+
+.card .headerCol {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgb#03a9f4;
+    clip-path: polygon(0 0,100% 0,100% 20%,0 60%);
+    transition: .5s;
+}
+
+.card:hover .headerCol {
+    clip-path: polygon(0 0,100% 0, 100%, 10%, 0 10%);
+}
+
+.card .imgBox {
+    position: relative;
+    z-index: 10;
+    width:100%;
+    height: 340px;
+}
+
+.card .imgBox img{
+    position: absolute;
+    width: 230px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(1);
+    transition: .5s;
+    animation: anim .8s ease-in-out alternate infinite;
+
+}
+
+@keyframes anim {
+    to {
+        top:60%;
+    }
+}
+
+.card:hover .imgBox img {
+    transform: translate(-50%,-50%) scale(0.8);
+    animation:none;
+}
+
+.card .contentBox {
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height:100px;
+    text-align: center;
+    transition: 1s;
+    z-index:9;
+
+}
+
+.card:hover .contentBox {
+    height: 160px;
+}
+
+.card .contentBox h2 {
+
+position: relative;
+color: #fff;
+font-weight:600;
+letter-spacing: 1px;
+font-size:40px;
+font-style: italic;
+
+}
+
+.card .contentBox .colors {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:8px 20px;
+    transition: .5s;
+    transition-delay: .3s;
+    opacity: 0;
+    visibility: hidden;
+
+
+}
+
+
+ .card:hover .contentBox .colors {
+     opacity: 1;
+     visibility: visible;
+ }
+ 
+ .colors h3 {
+    color:#fff;
+    font-weight:300;
+    font-size:14px;
+    text-transform: uppercase;
+    letter-spacing:2px;
+    margin-right: 10px;
+
+}
+
+.colors button {
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    margin:0 5px;
+    cursor: pointer;
+    outline:none;
+    border:none;
+
+}
+button.blue {
+    background: #03a9f4;
+}
+
+button.black {
+    background:#000;
+}
+
+button.green {
+    background: #9bdc28;
+}
+
+
+
+button.rose {
+    background: #e91e63;
+}
+
+
+
+
+
+.card button.buy {
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    border:none;
+    outline:none;
+    margin-top:10px;
+    font-weight: 600;
+    color:#000;
+    cursor: pointer;
+    transform: translateY(20px);
+    transition: .5s;
+    opacity:0;
+
+}
+
+.card:hover button.buy {
+    opacity: 1;
+    transform: translateY(20px);
+    transition-delay: .5s;
+
+
+}
+
